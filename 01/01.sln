@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01", "01.csproj", "{5536BD6E-F792-44E1-8EDC-8DBEA6A7B638}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bars", "..\bars\bars.csproj", "{3A213E72-DFC3-46CF-A2E8-AF8189C984EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5536BD6E-F792-44E1-8EDC-8DBEA6A7B638}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5536BD6E-F792-44E1-8EDC-8DBEA6A7B638}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5536BD6E-F792-44E1-8EDC-8DBEA6A7B638}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5536BD6E-F792-44E1-8EDC-8DBEA6A7B638}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A213E72-DFC3-46CF-A2E8-AF8189C984EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A213E72-DFC3-46CF-A2E8-AF8189C984EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A213E72-DFC3-46CF-A2E8-AF8189C984EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A213E72-DFC3-46CF-A2E8-AF8189C984EC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {93FCF35D-EDF8-44DA-B866-CB278350A38F}
+	EndGlobalSection
+EndGlobal
