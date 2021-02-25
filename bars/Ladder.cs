@@ -3,6 +3,8 @@ namespace bars
 {
     class Ladder
     {
+        private int w = new Random().Next(2, 5);
+        private int l = new Random().Next(2, 5);
 
         private int level;
         public Ladder(int level)
@@ -10,7 +12,7 @@ namespace bars
             this.level = level;
             for (int i = 0; i < level; i++)
             {
-                Frame fr = new Frame(new Random().Next(2, 5), new Random().Next(2, 5));
+                Frame fr = new Frame(w,l);
             }
         }
     }
