@@ -10,7 +10,7 @@ namespace bars
     {
         static void Main(string[] args)
         {
-            Ladder l = new Ladder(25);
+            Ladder l = new Ladder(15);
         }
     }
 }
