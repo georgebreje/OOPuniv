@@ -12,7 +12,7 @@ namespace ComplexNumbers
         {
             //Complex z1 = new Complex(0, -1);
             //Console.WriteLine(z1);
-            Complex z2 = new Complex("53i");
+            Complex z2 = new Complex("-30-50i");
             Console.WriteLine(z2);
             
             
