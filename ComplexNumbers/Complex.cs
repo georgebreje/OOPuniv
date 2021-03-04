@@ -37,7 +37,8 @@
                             counter++;
                         }
                         numberA = 0;
-                    } else if (numberi.Length == 1)
+                    }
+                    else if (numberi.Length == 1)
                     {
                         while (counter < imaginaryPositive[0].Length && char.IsDigit(v[counter]))
                         {
@@ -46,7 +47,8 @@
                         }
                         numberB = 0;
                     }
-                } else
+                }
+                else
                 {
                     //daca partea imaginara este pozitiva
                     if (imaginaryPositive.Length == 2)
@@ -83,21 +85,21 @@
                             counter1++;
                         }
                         numberB = 0 - numberB;
-                    }  
+                    }
 
                 }
             }
             // parte reala negativa && parte im = 0
             // parte reala = 0 && parte im negativa
             // parte reala negativa && parte im ! = 0
-            else 
+            else
             {
                 string[] negative = v.Split('-');
                 string[] realNegative = v.Split('-', '+');
                 if (negative.Length == 2 && realNegative.Length == 2)
                 {
                     string[] numberi = v.Split('i');
-                    if(numberi.Length == 2)
+                    if (numberi.Length == 2)
                     {
                         while (counter < negative[0].Length && char.IsDigit(v[counter]))
                         {
@@ -105,7 +107,8 @@
                             counter++;
                         }
                         numberA = 0;
-                    } else
+                    }
+                    else
                     {
                         while (counter < negative[0].Length && char.IsDigit(v[counter]))
                         {
@@ -117,9 +120,9 @@
                 }
                 if (realNegative.Length == 3 && negative.Length == 2)
                 {
-                    while (counter <= realNegative[1].Length && counter1 <= realNegative[0].Length+realNegative[1].Length)
+                    while (counter <= realNegative[1].Length && counter1 <= realNegative[0].Length + realNegative[1].Length)
                     {
-                        if(char.IsDigit(v[counter1]))
+                        if (char.IsDigit(v[counter1]))
                         {
                             numberA = numberA * 10 + ((int)v[counter1] - (int)'0');
                             counter++;
@@ -127,7 +130,7 @@
                         counter1++;
                     }
                     numberA = 0 - numberA;
-                    while(counter2 <= realNegative[2].Length && counter1 < v.Length)
+                    while (counter2 <= realNegative[2].Length && counter1 < v.Length)
                     {
                         if (char.IsDigit(v[counter1]))
                         {
@@ -137,7 +140,7 @@
                         counter1++;
                     }
                 }
-                if(negative.Length == 3)
+                if (negative.Length == 3)
                 {
                     while (counter <= negative[1].Length && counter1 <= negative[0].Length + negative[1].Length)
                     {
@@ -149,7 +152,7 @@
                         counter1++;
                     }
                     numberA = 0 - numberA;
-                    while(counter2 <= negative[2].Length && counter1 < v.Length)
+                    while (counter2 <= negative[2].Length && counter1 < v.Length)
                     {
                         if (char.IsDigit(v[counter1]))
                         {
@@ -171,8 +174,9 @@
                 if (b == 1)
                 {
                     return a.ToString() + "+" + "i";
-                } else
-                return a.ToString() + "+" + b.ToString() + "i";
+                }
+                else
+                    return a.ToString() + "+" + b.ToString() + "i";
             }
             else if (a != 0 && b < 0)
             {
@@ -198,6 +202,49 @@
                     return "-i";
             }
             return "";
+        }
+        public Complex Add(Complex c)
+        {
+            Complex sum = new Complex(a + c.a, b + c.b);
+            return sum;
+        }
+
+        public Complex Substraction(Complex c)
+        {
+            Complex sub = new Complex(a - c.a, b - c.b);
+            return sub;
+        }
+
+        public Complex Multiply(Complex c)
+        {
+            Complex res = new Complex(a * c.a - b * c.b, a * c.b + c.a * b);
+            return res;
+        }
+        public Complex Division(Complex c)
+        {
+            Complex div = new Complex((a * c.a + b * c.b) / (c.a * c.a + c.b * c.b), (c.a * b - a * c.b) / (c.a * c.a + c.b * c.b));
+            return div;
+        }
+        public static Complex operator + (Complex z1, Complex z2)
+        {
+            Complex sum = new Complex(z1.a + z2.a, z1.b + z2.b);
+            return sum;
+        }
+
+        public static Complex operator - (Complex z1, Complex z2)
+        {
+            Complex sub = new Complex(z1.a - z2.a, z1.b - z2.b);
+            return sub;
+        }
+        public static Complex operator * (Complex z1, Complex z2)
+        {
+            Complex mult = new Complex(z1.a * z2.a - z1.b * z2.b, z1.a * z2.b + z2.a * z1.b);
+            return mult;
+        }
+        public static Complex operator / (Complex z1, Complex z2)
+        {
+            Complex div = new Complex((z1.a * z2.a + z1.b * z2.b) / (z2.a * z2.a + z2.b * z2.b), (z2.a * z1.b - z1.a * z2.b) / (z2.a * z2.a + z2.b * z2.b));
+            return div;
         }
     }
 }
