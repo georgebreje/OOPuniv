@@ -11,23 +11,27 @@
         }
         public void Simplify()
         {
+            int acpy = a;
+            int bcpy = b;
             if (a % b != 0)
             {
                 if (cmmdc(a, b) != 1)
                 {
-                    a = a / cmmdc(a, b);
-                    b = b / cmmdc(a, b);
+                    acpy = acpy / cmmdc(a, b);
+                    bcpy = bcpy / cmmdc(a, b);
                 }
-                else if (cmmdc(a,b) == 1)
+                /*else if (cmmdc(a,b) == 1)
                 {
                     System.Console.WriteLine("can not be simplified");
-                }
+                }*/
             }
             else
             {
                 a = a / b;
                 b = 1;
             }
+            a = acpy;
+            b = bcpy;
         }
         public Rational Add(Rational c)
         {

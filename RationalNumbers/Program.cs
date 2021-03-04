@@ -10,7 +10,7 @@ namespace RationalNumbers
     {
         static void Main(string[] args)
         {
-            Rational r1 = new Rational(13,3);
+            Rational r1 = new Rational(75,18);
             Rational r2 = new Rational(5, 5);
             Rational sum = r1.Add(r2);
             Console.WriteLine(sum);
