@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace lab3
 {
-    class Line
+    public class Line
     {
         private Point p1;
         private Point p2;
