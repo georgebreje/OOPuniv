@@ -43,8 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CookRobot.cs" />
+    <Compile Include="GardenerRobot.cs" />
+    <Compile Include="HousekeeperRobot.cs" />
+    <Compile Include="Kitchen.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Robot.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

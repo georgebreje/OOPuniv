@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace Robot
 {
-    class Program
+    public class GardenerRobot : Robot
     {
-        static void Main(string[] args)
+        public override void greet()
         {
-            CookRobot ratatouille = new CookRobot();
-            ratatouille.greet();
+            Console.WriteLine("I'm a robot. I keep the garden clean.");
         }
     }
 }
