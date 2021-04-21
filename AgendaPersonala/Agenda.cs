@@ -8,6 +8,19 @@ namespace AgendaPersonala
 {
     class Agenda
     {
+        private Person holder;
+        private List<Activity> activityList;
+        public Agenda(Person holder)
+        {
+            this.holder = holder;
+        }
+
+        public void add(string description, DateTime start, DateTime finish)
+        {
+            Activity toAdd = new Activity(description, start, finish);
+            activityList.Add(toAdd);
+        }
+
 
     }
 }

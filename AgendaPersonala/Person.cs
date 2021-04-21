@@ -8,5 +8,17 @@ namespace AgendaPersonala
 {
     class Person
     {
+        private string name;
+        private string email;
+
+        public Person(string name, string email)
+        {
+            this.name = name;
+            this.email = email;
+        }
+
+        public string Name { get => name; set => name = value; }
+        public string Email { get => email; set => email = value; }
+
     }
 }
