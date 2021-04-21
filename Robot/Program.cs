@@ -13,7 +13,6 @@ namespace Robot
             CookRobot ratatouille = new CookRobot();
             ratatouille.greet();
 
-            Kitchen myKitchen = new Kitchen();
             ratatouille.cook();
             ratatouille.cook();
             ratatouille.cook();
@@ -21,7 +20,6 @@ namespace Robot
             ratatouille.cook();
             ratatouille.cook();
             ratatouille.cook();
-            
         }
     }
 }
