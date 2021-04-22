@@ -11,10 +11,21 @@ namespace AgendaPersonala
         private string name;
         private string email;
 
+        public Person()
+        {
+
+        }
+
         public Person(string name, string email)
         {
             this.name = name;
             this.email = email;
+        }
+
+        public bool isBusy()
+        {
+            
+            return true;
         }
 
         public string Name { get => name; set => name = value; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AgendaPersonala
 {
-    class Activity
+    class Activity : Agenda
     {
         private string description;
         private DateTime start;
@@ -17,13 +17,30 @@ namespace AgendaPersonala
 
         }
 
-        public Activity(string description, DateTime start, DateTime finish)
+        public Activity(string description, string[] start, string[] finish)
         {
             this.description = description;
-            this.start = start;
-            this.finish = finish;
+            this.start = parseData(start);
+            this.finish = parseData(finish);
         }
 
+        private DateTime parseData(string[] inputDateHour)
+        {
+            DateTime outData = new DateTime();
+            string[] formats = { "ddMMyyyy", "HHmm" };
+            bool ok = false;
+            foreach (var dataToParse in inputDateHour)
+            {
+                if (!DateTime.TryParseExact(dataToParse, formats, null,
+                System.Globalization.DateTimeStyles.AllowWhiteSpaces |
+                               System.Globalization.DateTimeStyles.AdjustToUniversal,
+                               out outData))
+                    throw new ArgumentException("Enter data in this format: ddMMyyyy HHmmss");
+            }
+            return outData;
+        }
+
+        
         public void setDescription(string description)
         {
             this.description = description;
