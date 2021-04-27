@@ -6,29 +6,56 @@ using System.Threading.Tasks;
 
 namespace AgendaPersonala
 {
-    class Activity : Agenda
+    class Activity
     {
         private string description;
         private DateTime start;
         private DateTime finish;
+        private string[] startInput;
+        private string[] finishInput;
+        private List<Person> participants;
 
         public Activity()
         {
-
+            participants = new List<Person>();
         }
 
-        public Activity(string description, string[] start, string[] finish)
+        public Activity(string description, string[] start, string[] finish, Person participant)
         {
+            participants = new List<Person>();
+            participant.Agenda.Activities.Add(this);
+            participants.Add(participant);
+            this.startInput = start;
+            this.finishInput = finish;
             this.description = description;
             this.start = parseData(start);
             this.finish = parseData(finish);
+        }
+
+        public void invite(Person toInvite)
+        {
+            bool ok = true;
+            foreach(Activity a in toInvite.Agenda.Activities)
+            {
+                if (a.getStart() >= this.getStart() && a.getFinish() <= this.getFinish())
+                {
+                    ok = false;
+                    break;
+                }
+            }
+            if (ok == true)
+            {
+                toInvite.Agenda.Activities.Add(this);
+                this.Participants.Add(toInvite);
+            }
+            else
+                Console.WriteLine($"{toInvite.Name} has an activity at that time.");
         }
 
         private DateTime parseData(string[] inputDateHour)
         {
             DateTime outData = new DateTime();
             string[] formats = { "ddMMyyyy", "HHmm" };
-            bool ok = false;
             foreach (var dataToParse in inputDateHour)
             {
                 if (!DateTime.TryParseExact(dataToParse, formats, null,
@@ -40,30 +67,18 @@ namespace AgendaPersonala
             return outData;
         }
 
-        
-        public void setDescription(string description)
-        {
-            this.description = description;
-        }
-
-        public void setStart(DateTime start)
-        {
-            this.start = start;
-        }
-        public void setFinish(DateTime finish)
-        {
-            this.finish = finish;
-        }
+        public List<Person> Participants { get => participants; }
 
         public string getDescription()
         {
             return description;
         }
 
-        public DateTime getStart()
-        {
-            return start;
-        }
+        public string[] getStartInput() { return startInput; }
+
+        public string[] getFinishInput() { return finishInput; }
+
+        public DateTime getStart() { return start; }
 
         public DateTime getFinish()
         {
