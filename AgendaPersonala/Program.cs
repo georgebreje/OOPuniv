@@ -28,11 +28,9 @@ namespace AgendaPersonala
             //foreach (Activity x in ppp.Agenda.Activities)
             //    Console.WriteLine(x.ToString());
 
-            p.Agenda.delete(p,curs);
+            p.Agenda.raport(new string[] { "26042021", "1500" }, new string[] { "26042021", "2100" });
 
-
-            foreach(Activity a in p.Agenda.Activities)
-                Console.WriteLine(a.ToString());
+            
         }
     }
 }

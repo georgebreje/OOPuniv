@@ -15,17 +15,23 @@ namespace AgendaPersonala
             activityList = new List<Activity>();
         }
 
-        private void orderActivities()
+        public void raport(string[] begin, string[] end)
         {
-
+            DateTime slimit = parseData(begin);
+            DateTime flimit = parseData(end);
+            foreach(Activity a in Activities)
+            {
+                if(a.getStart() > slimit && a.getFinish() < flimit)
+                    Console.WriteLine(a.ToString());
+            }
         }
 
-        public void delete(Person p, Activity toDelete)
+        public void delete(Activity toDelete)
         {
-            foreach (Activity a in p.Agenda.Activities.ToList())
+            foreach (Activity a in Activities.ToList())
             {
                 if (toDelete == a)
-                    p.Agenda.Activities.Remove(a);
+                    Activities.Remove(a);
             }
         }
         public List<Activity> find(string toFind)
@@ -40,7 +46,20 @@ namespace AgendaPersonala
         }
 
         public List<Activity> Activities { get => activityList; }
-
+        private DateTime parseData(string[] inputDateHour)
+        {
+            DateTime outData = new DateTime();
+            string[] formats = { "ddMMyyyy", "HHmm" };
+            foreach (var dataToParse in inputDateHour)
+            {
+                if (!DateTime.TryParseExact(dataToParse, formats, null,
+                System.Globalization.DateTimeStyles.AllowWhiteSpaces |
+                               System.Globalization.DateTimeStyles.AdjustToUniversal,
+                               out outData))
+                    throw new ArgumentException("Enter data in this format: ddMMyyyy HHmmss");
+            }
+            return outData;
+        }
 
     }
 }
