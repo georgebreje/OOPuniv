@@ -15,6 +15,16 @@ namespace AgendaPersonala
             activityList = new List<Activity>();
         }
 
+        public List<Activity> find(string toFind)
+        {
+            List<Activity> found = new List<Activity>();
+            foreach(Activity a in this.Activities)
+            {
+                if (a.getDescription() == toFind)
+                    found.Add(a);
+            }
+            return found;
+        }
 
         public List<Activity> Activities { get => activityList; }
 
