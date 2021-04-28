@@ -23,7 +23,7 @@ namespace AgendaPersonala
         public Activity(string description, string[] start, string[] finish, Person participant)
         {
             participants = new List<Person>();
-            participant.Agenda.Activities.Add(this);
+            participant.Agenda.Activities.Add(this);  // aici se adauga activitatea in agenda participantului / hostului
             participants.Add(participant);
             this.startInput = start;
             this.finishInput = finish;
@@ -31,6 +31,8 @@ namespace AgendaPersonala
             this.start = parseData(start);
             this.finish = parseData(finish);
         }
+
+        
 
         public void invite(Person toInvite)
         {
@@ -85,6 +87,18 @@ namespace AgendaPersonala
             return finish;
         }
 
+        public static bool operator ==(Activity a, Activity b)
+        {
+            if (a.ToString() == b.ToString())
+                return true;
+            return false;
+        }
+        public static bool operator !=(Activity a, Activity b)
+        {
+            if (a == b)
+                return false;
+            return true;
+        }
         public override string ToString()
         {
             return description + " de la " + start + " pana la " + finish;

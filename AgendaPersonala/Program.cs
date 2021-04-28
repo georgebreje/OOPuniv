@@ -16,6 +16,8 @@ namespace AgendaPersonala
             Person pppp = new Person("om", "email");
 
             Activity curs = new Activity("curs", new string[] { "26042021", "1600" }, new string[] { "26042021", "1700" }, p);
+            Activity urs = new Activity("purs", new string[] { "26042021", "1800" }, new string[] { "26042021", "1900" }, p);
+
             Activity predat = new Activity("Predat An 3", new string[] { "26042021", "1610" }, new string[] { "26042021", "1700" }, pp);
             Activity sport = new Activity("fac sport", new string[] { "26042021", "1910" }, new string[] { "26042021", "2000" }, ppp);
             Activity lucru = new Activity("lucrez", new string[] { "26042021", "1610" }, new string[] { "26042021", "1650" }, pppp);
@@ -26,8 +28,10 @@ namespace AgendaPersonala
             //foreach (Activity x in ppp.Agenda.Activities)
             //    Console.WriteLine(x.ToString());
 
+            p.Agenda.delete(p,curs);
 
-            foreach(Activity a in p.Agenda.find("curs"))
+
+            foreach(Activity a in p.Agenda.Activities)
                 Console.WriteLine(a.ToString());
         }
     }
