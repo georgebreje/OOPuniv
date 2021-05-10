@@ -15,6 +15,11 @@ namespace AgendaPersonala
             activityList = new List<Activity>();
         }
 
+        public void groupMeet()
+        {
+
+        }
+
         public void raport(string[] begin, string[] end)
         {
             DateTime slimit = parseData(begin);
