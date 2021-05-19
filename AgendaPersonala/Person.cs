@@ -24,8 +24,6 @@ namespace AgendaPersonala
             this.personAgenda = new Agenda();
         }
 
-        
-
         public Agenda Agenda { get => personAgenda; }
 
         public string Name { get => name; set => name = value; }
