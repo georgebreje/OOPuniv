@@ -10,5 +10,12 @@ namespace brainstorming1
     {
         public override string Name { get; set; }
         public override string Diet { get; set; }
+
+        public override string GetAnimalGroup { get { return "Mammal"; } }
+
+        public Mammal()
+        {
+
+        }
     }
 }

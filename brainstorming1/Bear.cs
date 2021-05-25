@@ -13,16 +13,16 @@ namespace brainstorming1
         public override DateTime Birthday { get; set; }
         public override int Age { get; set; }
         public override char Gender { get; set; }
-        public override int Id { get; set; }
+        public static int Id { get; set; }
         public override int Hunger { get; set; }
         public override int Rest { get; set; }
-        public override AnimalGroup GetAnimalGroup { get; set; }
+        public override string GetAnimalGroup { get; set; }
         public override Point Coordinates { get; set; }
         public List<Bear> ListOfBears = new List<Bear>();
 
         public Bear()
         {
-
+            Id++;
         }
         public override void Eat()
         {

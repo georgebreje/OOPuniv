@@ -13,8 +13,10 @@ namespace brainstorming1
             // natural reserve
 
             Bear one = new Bear();
+            Bear two = new Bear();
 
-
+            int id = Bear.Id;
+            Console.WriteLine(id);
         }
     }
 }

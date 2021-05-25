@@ -13,10 +13,9 @@ namespace brainstorming1
         public abstract DateTime Birthday { get; set; }
         public abstract int Age { get;  set; }
         public abstract char Gender { get; set; }
-        public abstract int Id { get;  set; }
         public abstract int Hunger { get;  set; }
         public abstract int Rest { get;  set; }
-        public abstract AnimalGroup GetAnimalGroup { get; set; }
+        public abstract string GetAnimalGroup { get; set; }
         public abstract Point Coordinates { get;  set; }
 
 
