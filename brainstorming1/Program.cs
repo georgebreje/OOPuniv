@@ -14,9 +14,12 @@ namespace brainstorming1
 
             Bear one = new Bear();
             Bear two = new Bear();
+            Bear three = new Bear();
 
-            int id = Bear.Id;
-            Console.WriteLine(id);
+
+
+            Console.WriteLine(one.GetDiet);
+            Console.WriteLine(three.Id);
         }
     }
 }

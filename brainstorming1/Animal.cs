@@ -6,6 +6,14 @@ using System.Threading.Tasks;
 
 namespace brainstorming1
 {
+    public enum Diet
+    {
+        Herbivore,
+        Carnivore,
+        Omnivore,
+        Detritivore
+    }
+
     public abstract class Animal
     {
         public abstract string Name { get;  set; }
@@ -15,6 +23,7 @@ namespace brainstorming1
         public abstract char Gender { get; set; }
         public abstract int Hunger { get;  set; }
         public abstract int Rest { get;  set; }
+        public abstract Diet GetDiet { get; }
         public abstract string GetAnimalGroup { get; set; }
         public abstract Point Coordinates { get;  set; }
 
