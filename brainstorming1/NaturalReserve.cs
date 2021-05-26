@@ -8,5 +8,6 @@ namespace brainstorming1
 {
     public class NaturalReserve
     {
+        
     }
 }

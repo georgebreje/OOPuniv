@@ -12,13 +12,26 @@ namespace brainstorming1
         {
             // natural reserve
 
-            Bear one = new Bear();
-            Bear two = new Bear();
-            Bear three = new Bear();
+            Bear bearone = new Bear();
+            Bear beartwo = new Bear();
+            Bear bearthree = new Bear();
 
             Food forestFood = new Food();
+            Habitat forestArieseni = new Forest();
+
+            forestArieseni.Bring(bearone);
+            forestArieseni.Bring(beartwo);
+            forestArieseni.Bring(bearthree);
+
+            foreach(Animal a in forestArieseni.animals)
+            {
+                Console.WriteLine(a.Id);
+            }
+
+            Habitat habitatulmeu = new Habitat();
+            habitatulmeu.add(forestArieseni.animals);
+
             Console.WriteLine(forestFood.FoodQuantity(FoodType.OmnivoreFood));
-            
         }
     }
 }
