@@ -6,8 +6,26 @@ using System.Threading.Tasks;
 
 namespace brainstorming1
 {
-    public abstract class Animal
+    public enum AnimalType
     {
+        Herbivore,
+        Omnivore
+    }
+
+    public class Animal
+    {
+        public Animal()
+        {
+
+        }
+
+        public void Eat(FoodType foodType, Food food)
+        {
+            if (foodType == FoodType.Hay)
+                food.Feeder(FoodType.Hay);
+            if (foodType == FoodType.Grain)
+                food.Feeder(FoodType.Grain);
+        }
 
     }
 }
