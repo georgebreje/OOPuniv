@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace brainstorming1
 {
-    public enum AnimalType
+    public enum AnimalDiet
     {
         Herbivore,
         Omnivore
@@ -14,16 +14,17 @@ namespace brainstorming1
 
     public class Animal
     {
+        public AnimalDiet Diet { get; set; }
         public Animal()
         {
 
         }
 
-        public void Eat(FoodType foodType, Food food)
+        public void Eat(Food food)
         {
-            if (foodType == FoodType.Hay)
+            if (Diet == AnimalDiet.Herbivore)
                 food.Feeder(FoodType.Hay);
-            if (foodType == FoodType.Grain)
+            if (Diet == AnimalDiet.Omnivore)
                 food.Feeder(FoodType.Grain);
         }
 

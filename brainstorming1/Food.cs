@@ -13,10 +13,10 @@ namespace brainstorming1
     }
     public class Food
     {
-        private int hayQ = 100;
-        private int grainQ = 100;
-        public int HayQ { get { return hayQ; } }
-        public int GrainQ { get { return grainQ; } }
+        private int hayQuantity = 100;
+        private int grainQuantity = 100;
+        public int HayQ { get { return hayQuantity; } }
+        public int GrainQ { get { return grainQuantity; } }
 
 
         public Food()
@@ -27,17 +27,17 @@ namespace brainstorming1
         public void Feeder(FoodType foodType)
         {
             if (foodType == FoodType.Hay)
-                hayQ -= 50;
+                hayQuantity -= 50;
             if (foodType == FoodType.Grain)
-                grainQ -= 50;
+                grainQuantity -= 50;
         }
 
         private int FoodQuantity(FoodType foodType)
         {
             if (foodType == FoodType.Hay)
-                return hayQ;
+                return hayQuantity;
             if (foodType == FoodType.Grain)
-                return grainQ;
+                return grainQuantity;
             return 0;
         }
     }
