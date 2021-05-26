@@ -15,8 +15,15 @@ namespace brainstorming1
     {
         private int hayQuantity = 100;
         private int grainQuantity = 100;
-        public int HayQ { get { return hayQuantity; } }
-        public int GrainQ { get { return grainQuantity; } }
+        public int HayQuantity { get { return hayQuantity; } }
+        public int GrainQuantity { get { return grainQuantity; } }
+        Dictionary<FoodType, int> foodTypeQuantity = new Dictionary<FoodType, int>();
+
+        public void InitializeStock()
+        {
+            foodTypeQuantity.Add(FoodType.Hay, HayQuantity);
+            foodTypeQuantity.Add(FoodType.Grain, GrainQuantity);
+        }
 
 
         public Food()
@@ -26,19 +33,34 @@ namespace brainstorming1
 
         public void Feeder(FoodType foodType)
         {
-            if (foodType == FoodType.Hay)
-                hayQuantity -= 50;
-            if (foodType == FoodType.Grain)
-                grainQuantity -= 50;
+            //check if there's food in the feeder
+            //foreach (KeyValuePair<FoodType, int> kvp in foodTypeQuantity)
+            //    if (kvp.Value == 0)
+            //        Console.WriteLine($"Add {kvp.Key} to the stock.");
+
+            if (foodType == FoodType.Hay && foodTypeQuantity[FoodType.Hay] != 0)
+            {
+                foodTypeQuantity[FoodType.Hay] -= 50;
+            }
+            else if (foodType == FoodType.Hay && foodTypeQuantity[FoodType.Hay] == 0)
+                Console.WriteLine($"Add Hay to the stock.");
+
+            if (foodType == FoodType.Grain && foodTypeQuantity[FoodType.Grain] != 0)
+            {
+                foodTypeQuantity[FoodType.Grain] -= 50;
+            }
+            else if(foodType == FoodType.Grain && foodTypeQuantity[FoodType.Grain] == 0)
+                Console.WriteLine($"Add Grain to the stock.");
+
+
         }
 
-        private int FoodQuantity(FoodType foodType)
+        public int FoodQuantity()
         {
-            if (foodType == FoodType.Hay)
-                return hayQuantity;
-            if (foodType == FoodType.Grain)
-                return grainQuantity;
-            return 0;
+            int totalFood = 0;
+            foreach (KeyValuePair<FoodType, int> kvp in foodTypeQuantity)
+                totalFood += kvp.Value;
+            return totalFood;
         }
     }
 }

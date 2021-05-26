@@ -11,11 +11,25 @@ namespace brainstorming1
         static void Main(string[] args)
         {
             Animal cow = new Animal();
+            Animal dog = new Animal();
             Food farmfood = new Food();
+            farmfood.InitializeStock();
 
-            cow.Eat(FoodType.Hay, farmfood);
 
-            Console.WriteLine(farmfood.HayQ);
+            cow.Diet = AnimalDiet.Herbivore;
+            dog.Diet = AnimalDiet.Omnivore;
+            
+            cow.Eat(farmfood);
+            cow.Eat(farmfood);
+            cow.Eat(farmfood);
+
+
+            dog.Eat(farmfood);
+
+
+
+
+            Console.WriteLine(farmfood.FoodQuantity());  
         }
     }
 }
