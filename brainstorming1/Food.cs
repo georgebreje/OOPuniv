@@ -6,9 +6,22 @@ using System.Threading.Tasks;
 
 namespace brainstorming1
 {
-    class Food
+    public enum FoodType
     {
-        public string Name { get; set; }
-        public string Type { get; set; }
+        HerbivoreFood ,
+        CarnivoreFood,
+        OmnivoreFood,
+        DetritivoreFood
+    }
+    public class Food
+    {
+        private int omnivoreFoodQuantity = 100;
+        public Food() { }
+        public int FoodQuantity(FoodType foodType)
+        {
+            if (foodType == FoodType.OmnivoreFood)
+                return omnivoreFoodQuantity;
+            return 0;
+        }
     }
 }

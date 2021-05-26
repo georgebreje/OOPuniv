@@ -51,6 +51,7 @@
     <Compile Include="Forest.cs" />
     <Compile Include="Habitat.cs" />
     <Compile Include="Mammal.cs" />
+    <Compile Include="NaturalReserve.cs" />
     <Compile Include="Point.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

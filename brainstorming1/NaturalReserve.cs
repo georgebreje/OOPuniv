@@ -6,14 +6,7 @@ using System.Threading.Tasks;
 
 namespace brainstorming1
 {
-
-
-    public class Mammal : AnimalGroup
+    public class NaturalReserve
     {
-        public override string GroupName { get { return "Mammal"; } }
-        public Mammal()
-        {
-
-        }
     }
 }

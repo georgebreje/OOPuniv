@@ -18,10 +18,8 @@ namespace brainstorming1
         public override string GetAnimalGroup { get; set; }
         public override Point Coordinates { get; set; }
         public override Diet GetDiet { get { return Diet.Omnivore; } }
-
-        public List<Bear> ListOfBears = new List<Bear>();
         private static int nextId = 0;
-        public int Id { get; private set; }
+        public override int Id { get; set; }
         public Bear()
         {
             Id = nextId;

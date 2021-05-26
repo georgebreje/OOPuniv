@@ -16,10 +16,9 @@ namespace brainstorming1
             Bear two = new Bear();
             Bear three = new Bear();
 
-
-
-            Console.WriteLine(one.GetDiet);
-            Console.WriteLine(three.Id);
+            Food forestFood = new Food();
+            Console.WriteLine(forestFood.FoodQuantity(FoodType.OmnivoreFood));
+            
         }
     }
 }

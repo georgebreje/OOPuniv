@@ -10,5 +10,7 @@ namespace brainstorming1
     {
         public override string Name { get ; set ; }
         public override string Description { get ; set ; }
+
+        public List<Animal> listofanimals = new List<Animal>();
     }
 }
