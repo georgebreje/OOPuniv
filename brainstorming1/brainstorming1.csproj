@@ -44,8 +44,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Animal.cs" />
+    <Compile Include="Exceptions\NoMoreFoodException.cs" />
     <Compile Include="Farm.cs" />
     <Compile Include="Food.cs" />
+    <Compile Include="Handlers\Handler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

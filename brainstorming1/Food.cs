@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using brainstorming1.Exceptions;
 
 namespace brainstorming1
 {
@@ -25,34 +26,29 @@ namespace brainstorming1
             foodTypeQuantity.Add(FoodType.Grain, GrainQuantity);
         }
 
-
         public Food()
         {
 
         }
 
-        public void Feeder(FoodType foodType)
+        public bool Feeder(FoodType foodType)
         {
-            //check if there's food in the feeder
-            //foreach (KeyValuePair<FoodType, int> kvp in foodTypeQuantity)
-            //    if (kvp.Value == 0)
-            //        Console.WriteLine($"Add {kvp.Key} to the stock.");
-
             if (foodType == FoodType.Hay && foodTypeQuantity[FoodType.Hay] != 0)
             {
                 foodTypeQuantity[FoodType.Hay] -= 50;
+                return true;
             }
             else if (foodType == FoodType.Hay && foodTypeQuantity[FoodType.Hay] == 0)
-                Console.WriteLine($"Add Hay to the stock.");
+                throw new NoMoreFoodException("Add Hay to the stock.");
 
             if (foodType == FoodType.Grain && foodTypeQuantity[FoodType.Grain] != 0)
             {
                 foodTypeQuantity[FoodType.Grain] -= 50;
+                return true;
             }
-            else if(foodType == FoodType.Grain && foodTypeQuantity[FoodType.Grain] == 0)
-                Console.WriteLine($"Add Grain to the stock.");
-
-
+            else if (foodType == FoodType.Grain && foodTypeQuantity[FoodType.Grain] == 0)
+                throw new NoMoreFoodException("Add Grain to the stock.");
+            return false;
         }
 
         public int FoodQuantity()

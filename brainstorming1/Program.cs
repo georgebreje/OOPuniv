@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace brainstorming1
 {
@@ -13,7 +14,11 @@ namespace brainstorming1
             Animal cow = new Animal();
             Animal dog = new Animal();
             Food farmfood = new Food();
+            Farm myFarm = new Farm();
             farmfood.InitializeStock();
+            myFarm.animals.Add(cow);
+            myFarm.animals.Add(dog);
+
 
 
             cow.Diet = AnimalDiet.Herbivore;

@@ -19,7 +19,6 @@ namespace brainstorming1
         {
 
         }
-
         public void Eat(Food food)
         {
             if (Diet == AnimalDiet.Herbivore)

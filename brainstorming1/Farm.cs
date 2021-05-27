@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace brainstorming1
 {
-    class Farm
+    public class Farm
     {
+        public List<Animal> animals = new List<Animal>();
+        public Farm() { }
 
+        
     }
 }
