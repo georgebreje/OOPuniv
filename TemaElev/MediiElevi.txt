@@ -1,0 +1,5 @@
+﻿Breje Ciprian 4 10 10 10 10
+Hava Cristina 6 10 9 8 5 6 7
+Breje George 4 10 10 10 10
+Porumb Andrei 3 5 4 2
+Mandovici Dorin 5 8 9 10 8 7
