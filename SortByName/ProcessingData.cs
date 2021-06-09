@@ -16,7 +16,7 @@ namespace SortByName
             this.fileName = fileName;
         }
 
-        public void ceva()
+        public void RetrieveData()
         {
             TextReader load = new StreamReader(fileName);
             string buffer;
@@ -32,6 +32,63 @@ namespace SortByName
                 }
                 catch (Exception e) { }
                 personList.Add(p);
+            }
+        }
+
+        public void SortStudents()
+        {
+            for (int i = 0; i < personList.Count - 1; i++)
+            {
+                char[] numeI = personList[i].Nume.ToCharArray();
+                char[] numeJ = personList[i + 1].Nume.ToCharArray();
+
+                int minLengthNume = numeI.Length < numeJ.Length ? numeI.Length : numeJ.Length;
+                bool okNume = true;
+
+                for (int q = 0; q < minLengthNume && okNume; q++)
+                {
+                    if (numeI[q] < numeJ[q])
+                    {
+                        Person aux = personList[i + 1];
+                        personList[i + 1] = personList[i];
+                        personList[i] = aux;
+                        okNume = false;
+                    }
+                }
+
+                char[] firstNameI = personList[i].Prenume1.ToCharArray();
+                char[] firstNameJ = personList[i + 1].Prenume1.ToCharArray();
+
+                int minLengthFirstName = firstNameI.Length < firstNameJ.Length ? firstNameI.Length : firstNameI.Length;
+                bool okFirstName = true;
+                for (int q = 0; q < minLengthFirstName && okFirstName; q++)
+                {
+                    if (firstNameI[q] < firstNameJ[q])
+                    {
+                        Person aux = personList[i + 1];
+                        personList[i + 1] = personList[i];
+                        personList[i] = aux;
+                        okFirstName = false;
+                    }
+                }
+                try
+                {
+                    char[] firstName1I = personList[i].Prenume2.ToCharArray();
+                    char[] firstName1J = personList[i + 1].Prenume2.ToCharArray();
+
+                    int minLengthFirstName1 = firstName1I.Length < firstName1J.Length ? firstName1I.Length : firstName1I.Length;
+                    bool okFirstName1 = true;
+                    for (int q = 0; q < minLengthFirstName1 && okFirstName1; q++)
+                    {
+                        if (firstName1I[q] < firstName1J[q])
+                        {
+                            Person aux = personList[i + 1];
+                            personList[i + 1] = personList[i];
+                            personList[i] = aux;
+                            okFirstName1 = false;
+                        }
+                    }
+                } catch (Exception e) { }
             }
         }
     }

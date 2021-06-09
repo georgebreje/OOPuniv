@@ -13,8 +13,8 @@ namespace SortByName
             char c1 = 'Ș'; // int = 536
             char c2 = 'Ț'; // int = 538
             ProcessingData run = new ProcessingData(@"../../TextFile1.txt");
-            run.ceva();
-            run.personList.Sort();
+            run.RetrieveData();
+            run.SortStudents();
             foreach (Person p in run.personList)
                 Console.WriteLine(p.ToString()) ;
         }
